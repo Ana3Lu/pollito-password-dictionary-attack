@@ -10,13 +10,25 @@ import java.security.NoSuchAlgorithmException;
 public class DictionaryAttack {
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        String texto, hash; //texto contiene la contraseña
+        String texto, hash; //texto contiene la clave
         String[] keyWords = {"pollito", "papas", "pollitoconpapas", "kfc", "chicken", "pollo", "pollocampero", "apollo"};
         String[] passwords = getPasswords();
         String[] hashes = getHashes();
         int[] years = {1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
                 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025};
 
+        System.out.println("Claves adivinadas de los hashes filtrados: \n");
+        for (String password : passwords) {
+            for (int year : years) {
+                texto = password + year + "*";
+                hash = hashCoverter(texto);
+                for (String hashPassword : hashes) {
+                    if (hash.equals(hashPassword)) {
+                        System.out.println(texto);
+                    }
+                }
+            }
+        } 
         
     }
 
