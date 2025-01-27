@@ -22,9 +22,12 @@ public class DictionaryAttack {
                 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025};
 
         System.out.println("Claves adivinadas de los hashes filtrados: \n");
+        //Iniciar "Cronómetro" para contabilizar el tiempo del algoritmo
+        long inicio = System.currentTimeMillis();
+         
         for (int i=0; i<passwords.length;i++) {
             String password = passwords[i];
-            //
+            //Este pedazo examina cada contraseña de rock you y la compara con el arreglo con palabras clave, si hay coincidencia suma un uno a otro array asociado al de KeyWords
             for (int j = 0; j < keyWords.length; j++) {
                 if (password.equals(keyWords[j])) {
                     countKeyWords[j]++;
@@ -42,10 +45,18 @@ public class DictionaryAttack {
                 }
             }
         }
+        //cuando el algoritmo haya acabado, conseguir el tiempo que haya transcurrido desde que inició
+        long fin = System.currentTimeMillis();
+        //restar final menos incial para conseguir el tiempo que tardó el algoritmo
+        double tiempo = (double) ((fin - inicio));
+        
+        
         System.out.println("\n Palabras claves encontradas en rockYou.txt: ");
         for(int i = 0; i<keyWords.length;i++){
             System.out.println(keyWords[i] + ": " + countKeyWords[i]);
         }
+        
+        System.out.println(tiempo +" milisegundos");//mostrar por consola el tiempo tomado en milisegundos
     }
 
     public static String hashCoverter(String texto) throws NoSuchAlgorithmException {
