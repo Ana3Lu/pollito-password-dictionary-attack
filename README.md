@@ -4,7 +4,7 @@
 El uso del fichero Rockyou.txt facilitó en gran medida la desencriptación de estas contraseñas, ademas de que las constraseñas que se debían adivinar seguían un patrón (*palabra* + **año** + *).
 
 ### ¿Cuánto tiempo aproximadamente duró el equipo en adivinar las contraseñas?
-Sorprendentemente el equipo fue capaz de procesar cada contraseña, agregarle a cada una un año ademas de un asterisco para convertirla a un hash y compararlo con otro en exactamente 979.0 milisegundos (~1 segundo).
+Sorprendentemente el equipo fue capaz de procesar cada contraseña, agregarle a cada una un año ademas de un asterisco para convertirla a un hash y compararlo con otro en un intervalo de tiempo entre 630 y 970  milisegundos (~1 segundo).
 
 ![image](https://github.com/user-attachments/assets/ab7c1f5f-909f-4335-8910-bed4a4f81b9c)
 
