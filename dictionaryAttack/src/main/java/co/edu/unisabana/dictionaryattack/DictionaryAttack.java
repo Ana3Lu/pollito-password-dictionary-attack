@@ -14,6 +14,7 @@ public class DictionaryAttack {
         String texto, hash; //texto contiene la clave
         
         String[] keyWords = {"pollito", "papas", "pollitoconpapas", "kfc", "chicken", "pollo", "pollocampero", "apollo"};
+        
         int[] countKeyWords = new int[8];
         
         String[] passwords = getPasswords();
